@@ -149,13 +149,4 @@ describe('test Utils', function() {
     assert.deepStrictEqual(absPath, [path.join(__dirname, '../../extra/commands/typescript/tsWait.js')]);
   });
 
-  it('SafeJSON.stringify for circurlar reference objects', function() {
-    const obj = {
-      value: 1
-    };
-    obj.cirRef = obj;
-
-    assert.strictEqual(Utils.SafeJSON.stringify(obj), '{"value":1,"cirRef":"[Circular]"}');
-  });
-
 });
